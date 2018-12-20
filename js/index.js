@@ -4,15 +4,18 @@ alert('Fibonacci array = ' + fibonacci_arr(n));
 alert('Fibonacci rec = ' + fibonacci_rec(n));
 
 function fibonacci(n) {
-
+    array=[];
     let first = 1;
     let second = 1;
+    array.push(first,second)
+    
     for (i = 3; i <= n; i++) {
         let next = first + second;
         first = second;
         second = next;
+        array.push(next);
     }
-    return second;
+    return array;
 }
 
 function fibonacci_arr(n) {
@@ -20,7 +23,7 @@ function fibonacci_arr(n) {
     for (i = 2; i < n; i++) {
         fibs.push(fibs[i - 1] + fibs[i - 2]);
     }
-    return fibs[fibs.length - 1];
+    return fibs;
 }
 
 function fibonacci_rec(n) {
@@ -28,6 +31,6 @@ function fibonacci_rec(n) {
         return (fibonacci_rec(n - 1) + fibonacci_rec(n - 2));
     }
     else {
-        return "Enter n>=2"
+        return 1;
     }
 }
